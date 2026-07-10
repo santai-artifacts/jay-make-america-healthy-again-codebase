@@ -270,6 +270,17 @@
     .foot-grid { grid-template-columns: 1fr; }
   }
 
+  #nutrition { padding: 96px 0; background: #f8fafb; }
+  #nutrition h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; color: var(--navy); }
+  .nutrition-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
+  .nutrition-card { background: #fff; border-radius: 12px; padding: 28px; border: 1px solid #e5e9f0; box-shadow: 0 2px 8px rgba(0,0,0,.04); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .nutrition-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+  .nutrition-category { font-weight: 700; font-size: 1.05rem; color: var(--gold); margin-bottom: 16px; letter-spacing: 0.5px; }
+  .nutrition-card ul { list-style: none; padding: 0; margin: 0; }
+  .nutrition-card li { font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 12px; }
+  .nutrition-card li:last-child { margin-bottom: 0; }
+  .nutrition-card strong { color: var(--navy); font-weight: 600; }
+
   @media (prefers-reduced-motion: reduce) {
     * { scroll-behavior: auto !important; }
     .reveal { opacity: 1; transform: none; transition: none; }
@@ -495,6 +506,54 @@
           </form>
           <p class="pledge-success" id="pledgeSuccess" role="status">★ Thank you for joining the movement! Your voice matters.</p>
           <p class="pledge-note">This is a demonstration site. No information is stored or transmitted.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="nutrition">
+      <div class="wrap">
+        <div class="section-head reveal" style="margin-inline:auto;text-align:center">
+          <div class="kicker">Real Food</div>
+          <h2>Nutrient-dense foods for health</h2>
+          <p style="margin-inline:auto">High-fiber, low-calorie whole foods that nourish your body and support the mission for real nutrition.</p>
+        </div>
+        <div class="nutrition-grid">
+          <div class="nutrition-card reveal">
+            <div class="nutrition-category">Berries & Fruits</div>
+            <ul>
+              <li><strong>Raspberries</strong> — 8g fiber, 64 cal/cup</li>
+              <li><strong>Blackberries</strong> — 8g fiber, 62 cal/cup</li>
+              <li><strong>Pear</strong> — 6g fiber, 101 cal</li>
+              <li><strong>Apple</strong> — 4g fiber, 95 cal</li>
+            </ul>
+          </div>
+          <div class="nutrition-card reveal">
+            <div class="nutrition-category">Vegetables</div>
+            <ul>
+              <li><strong>Broccoli</strong> — 2.4g fiber, 31 cal/cup</li>
+              <li><strong>Spinach</strong> — 0.7g fiber, 7 cal/cup</li>
+              <li><strong>Brussels sprouts</strong> — 3.3g fiber, 38 cal/cup</li>
+              <li><strong>Bell peppers</strong> — 1.9g fiber, 30 cal/cup</li>
+            </ul>
+          </div>
+          <div class="nutrition-card reveal">
+            <div class="nutrition-category">Legumes</div>
+            <ul>
+              <li><strong>Lentils</strong> — 15.6g fiber, 230 cal/cup</li>
+              <li><strong>Black beans</strong> — 15g fiber, 227 cal/cup</li>
+              <li><strong>Chickpeas</strong> — 12.5g fiber, 269 cal/cup</li>
+              <li><strong>Peas</strong> — 8.8g fiber, 134 cal/cup</li>
+            </ul>
+          </div>
+          <div class="nutrition-card reveal">
+            <div class="nutrition-category">Seeds & Grains</div>
+            <ul>
+              <li><strong>Chia seeds</strong> — 10g fiber, 138 cal/oz</li>
+              <li><strong>Whole wheat bread</strong> — 2-3g fiber, 100-120 cal/slice</li>
+              <li><strong>Oat bran</strong> — 7g fiber, 150 cal/¼ cup</li>
+              <li><strong>Barley</strong> — 6g fiber, 193 cal/cup</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
