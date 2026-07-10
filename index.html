@@ -202,6 +202,15 @@
   .acc-panel { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
   .acc-panel p { padding: 0 4px 28px; color: #c2cce4; max-width: 760px; }
 
+  /* ---------- Food guide ---------- */
+  .food-categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .food-category { background: #fff; border-radius: var(--radius); padding: 28px; border: 1px solid var(--line); }
+  .food-category h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 18px; }
+  .food-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .food-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: 0.95rem; color: var(--ink); }
+  .food-list li:last-child { border-bottom: none; }
+  .nutrient { font-size: 0.85rem; color: var(--ink-soft); font-weight: 500; white-space: nowrap; }
+
   /* ---------- Get involved ---------- */
   .involve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
   .involve-card { background: var(--paper); border-radius: var(--radius); border: 1px solid var(--line); padding: 34px 28px; text-align: center; }
@@ -261,7 +270,7 @@
     .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
     .mission-grid { grid-template-columns: 1fr; gap: 34px; }
     .mission-grid .photo { order: -1; }
-    .pillars-grid, .involve-grid { grid-template-columns: 1fr; }
+    .pillars-grid, .involve-grid, .food-categories { grid-template-columns: 1fr; }
     .foot-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 540px) {
@@ -446,6 +455,71 @@
             </button>
             <div class="acc-panel"><p>Prioritize the cleanup of contaminated water systems and reduce community exposure to pollutants and toxic chemicals linked to chronic and developmental health problems.</p></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL FOOD GUIDE -->
+    <section style="background: var(--cream-soft);">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="kicker">Real Food Guide</div>
+          <h2>Whole foods that fuel health</h2>
+          <p>The foundation of a healthier America is choosing real, nutrient-dense foods. Here are some of the best high-fiber, low-calorie options you can start eating today.</p>
+        </div>
+        <div class="food-categories">
+          <div class="food-category reveal">
+            <h3>🫐 Berries & Fruits</h3>
+            <ul class="food-list">
+              <li><strong>Raspberries</strong> <span class="nutrient">8g fiber, 64 cal</span></li>
+              <li><strong>Blackberries</strong> <span class="nutrient">8g fiber, 62 cal</span></li>
+              <li><strong>Strawberries</strong> <span class="nutrient">3g fiber, 49 cal</span></li>
+              <li><strong>Blueberries</strong> <span class="nutrient">4g fiber, 85 cal</span></li>
+              <li><strong>Apple (medium)</strong> <span class="nutrient">4g fiber, 95 cal</span></li>
+              <li><strong>Pear (medium)</strong> <span class="nutrient">6g fiber, 101 cal</span></li>
+            </ul>
+          </div>
+          <div class="food-category reveal">
+            <h3>🥦 Vegetables</h3>
+            <ul class="food-list">
+              <li><strong>Broccoli</strong> <span class="nutrient">2.4g fiber, 31 cal</span></li>
+              <li><strong>Cauliflower</strong> <span class="nutrient">2.3g fiber, 25 cal</span></li>
+              <li><strong>Spinach</strong> <span class="nutrient">0.7g fiber, 7 cal</span></li>
+              <li><strong>Bell peppers</strong> <span class="nutrient">1.9g fiber, 30 cal</span></li>
+              <li><strong>Carrots</strong> <span class="nutrient">3.5g fiber, 52 cal</span></li>
+              <li><strong>Brussels sprouts</strong> <span class="nutrient">3.3g fiber, 38 cal</span></li>
+            </ul>
+          </div>
+          <div class="food-category reveal">
+            <h3>🌱 Legumes & Proteins</h3>
+            <ul class="food-list">
+              <li><strong>Lentils (cooked)</strong> <span class="nutrient">15.6g fiber, 230 cal</span></li>
+              <li><strong>Black beans (cooked)</strong> <span class="nutrient">15g fiber, 227 cal</span></li>
+              <li><strong>Split peas (cooked)</strong> <span class="nutrient">16.3g fiber, 231 cal</span></li>
+              <li><strong>Chickpeas (cooked)</strong> <span class="nutrient">12.5g fiber, 269 cal</span></li>
+              <li><strong>Green beans (cooked)</strong> <span class="nutrient">4g fiber, 44 cal</span></li>
+            </ul>
+          </div>
+          <div class="food-category reveal">
+            <h3>🌾 Whole Grains & Seeds</h3>
+            <ul class="food-list">
+              <li><strong>Chia seeds (1 oz)</strong> <span class="nutrient">10g fiber, 138 cal</span></li>
+              <li><strong>Wheat bran (1/4 cup)</strong> <span class="nutrient">6g fiber, 63 cal</span></li>
+              <li><strong>Oat bran (1/4 cup)</strong> <span class="nutrient">7g fiber, 150 cal</span></li>
+              <li><strong>Barley (cooked)</strong> <span class="nutrient">6g fiber, 193 cal</span></li>
+              <li><strong>Whole wheat bread</strong> <span class="nutrient">2-3g fiber, 100-120 cal</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="food-tips reveal" style="background: #fff; border-radius: var(--radius); padding: 36px 28px; margin-top: 48px; border: 1px solid var(--line);">
+          <h3 style="color: var(--navy); margin-bottom: 18px;">Quick Tips to Maximize Benefits</h3>
+          <ul style="list-style: none; color: var(--ink-soft); line-height: 1.8;">
+            <li style="margin-bottom: 12px;">✓ <strong>Eat skins</strong> — keep apple and pear skins for extra fiber</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Eat raw when possible</strong> — cooking can reduce fiber content</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Mix & match</strong> — combine berries with seeds for maximum nutrition</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Increase gradually</strong> — add fiber slowly to avoid digestive discomfort</li>
+            <li>✓ <strong>Drink water</strong> — fiber works best with proper hydration (2-3L daily)</li>
+          </ul>
         </div>
       </div>
     </section>
