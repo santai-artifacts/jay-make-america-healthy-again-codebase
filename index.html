@@ -10,19 +10,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --navy: #0a1f44;
-    --navy-deep: #061536;
-    --red: #b22234;
-    --red-bright: #d6334a;
-    --cream: #f7f4ec;
-    --cream-soft: #fbf9f4;
+    --navy: #0d2141;
+    --navy-deep: #07132a;
+    --red: #c0293c;
+    --red-bright: #d63d52;
+    --cream: #f5f2ea;
+    --cream-soft: #faf8f3;
     --paper: #ffffff;
-    --ink: #16213a;
-    --ink-soft: #44506b;
-    --gold: #c8a24a;
-    --green: #3a7d44;
-    --line: #e3ddcf;
-    --shadow: 0 18px 50px -20px rgba(10, 31, 68, 0.35);
+    --ink: #13202f;
+    --ink-soft: #495872;
+    --gold: #d4a040;
+    --green: #2a8c50;
+    --green-soft: #e8f3ec;
+    --green-mid: #d0ebda;
+    --line: #dedad0;
+    --shadow: 0 20px 56px -22px rgba(13, 33, 65, 0.30);
     --radius: 18px;
     --maxw: 1160px;
   }
@@ -83,7 +85,7 @@
     flex: 0 0 auto;
   }
   .brand .txt { font-size: 0.95rem; line-height: 1; }
-  .brand .txt span { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; color: var(--red); margin-top: 4px; }
+  .brand .txt span { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; color: var(--green); margin-top: 4px; }
 
   nav.links { display: flex; align-items: center; gap: 28px; }
   nav.links a { font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); transition: color .2s; }
@@ -96,8 +98,8 @@
     border: 0; cursor: pointer; transition: transform .18s, box-shadow .2s, background .2s;
     font-family: inherit;
   }
-  .btn-red { background: var(--gold); color: var(--navy-deep); box-shadow: 0 8px 22px -8px rgba(200,162,74,.7); }
-  .btn-red:hover { background: #d9b563; transform: translateY(-2px); }
+  .btn-red { background: linear-gradient(135deg, var(--gold), #e8b84a); color: var(--navy-deep); box-shadow: 0 8px 24px -8px rgba(212,160,64,.65); }
+  .btn-red:hover { background: linear-gradient(135deg, #e8b84a, #f0c660); transform: translateY(-2px); box-shadow: 0 12px 28px -8px rgba(212,160,64,.75); }
   .btn-ghost { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
   .btn-ghost:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
   .btn-light { background: #fff; color: var(--navy); }
@@ -146,17 +148,17 @@
   .stat { padding: 38px 24px; text-align: center; border-right: 1px solid var(--line); }
   .stat:last-child { border-right: 0; }
   .stat .num { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: var(--navy); letter-spacing: -0.03em; }
-  .stat .num .unit { color: var(--red); }
+  .stat .num .unit { color: var(--green); }
   .stat .lbl { font-size: 0.84rem; color: var(--ink-soft); margin-top: 6px; max-width: 220px; margin-inline: auto; }
 
   /* ---------- Sections ---------- */
   section { padding: 92px 0; }
   .section-head { max-width: 680px; margin-bottom: 54px; }
-  .kicker { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .kicker { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
   .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--navy); }
   .section-head p { margin-top: 18px; font-size: 1.08rem; color: var(--ink-soft); }
 
-  .mission { background: var(--cream-soft); }
+  .mission { background: var(--green-soft); }
   .mission-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
   .mission-grid .photo {
     border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
@@ -165,7 +167,7 @@
   .mission-grid .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .mission blockquote {
     font-family: "Source Serif 4", serif; font-size: 1.5rem; font-weight: 500;
-    line-height: 1.35; color: var(--navy); border-left: 4px solid var(--red);
+    line-height: 1.35; color: var(--navy); border-left: 4px solid var(--green);
     padding-left: 22px; margin: 28px 0;
   }
   .mission cite { display: block; font-style: normal; font-family: "Libre Franklin"; font-size: .9rem; font-weight: 700; color: var(--ink-soft); margin-top: 14px; }
@@ -177,10 +179,10 @@
     padding: 32px 28px; transition: transform .25s, box-shadow .25s, border-color .25s;
     position: relative; overflow: hidden;
   }
-  .card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+  .card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--green), var(--gold)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
   .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
   .card:hover::before { transform: scaleX(1); }
-  .card .ico { width: 52px; height: 52px; border-radius: 14px; background: var(--cream); display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 18px; }
+  .card .ico { width: 52px; height: 52px; border-radius: 14px; background: var(--green-soft); display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 18px; }
   .card h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 10px; }
   .card p { font-size: 0.96rem; color: var(--ink-soft); }
 
