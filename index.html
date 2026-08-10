@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Make America Healthy Again — A Movement to End the Chronic Disease Epidemic</title>
+<meta name="description" content="Make America Healthy Again (MAHA) is a movement to confront the chronic disease epidemic, reform our food system, clean up our environment, and restore trust in public health." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0d2141;
+    --navy-deep: #07132a;
+    --red: #c0293c;
+    --red-bright: #d63d52;
+    --cream: #f5f2ea;
+    --cream-soft: #faf8f3;
+    --paper: #ffffff;
+    --ink: #13202f;
+    --ink-soft: #495872;
+    --gold: #d4a040;
+    --green: #2a8c50;
+    --green-soft: #e8f3ec;
+    --green-mid: #d0ebda;
+    --line: #dedad0;
+    --shadow: 0 20px 56px -22px rgba(13, 33, 65, 0.30);
+    --radius: 18px;
+    --maxw: 1160px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Libre Franklin", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { line-height: 1.1; letter-spacing: -0.02em; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  .serif { font-family: "Source Serif 4", Georgia, serif; }
+
+  /* ---------- Top banner ---------- */
+  .topbar {
+    background: var(--navy-deep);
+    color: #cdd7ee;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 7px 16px;
+  }
+  .topbar strong { color: #fff; }
+
+  /* ---------- Nav ---------- */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247, 244, 236, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -0.02em; }
+  .brand .mark {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 25%, #15327a, var(--navy));
+    display: grid; place-items: center; color: #fff; font-size: 1rem;
+    box-shadow: inset 0 0 0 2px var(--gold);
+    flex: 0 0 auto;
+  }
+  .brand .txt { font-size: 0.95rem; line-height: 1; }
+  .brand .txt span { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; color: var(--green); margin-top: 4px; }
+
+  nav.links { display: flex; align-items: center; gap: 28px; }
+  nav.links a { font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); transition: color .2s; }
+  nav.links a:hover { color: var(--navy); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 700; font-size: 0.9rem;
+    padding: 12px 22px; border-radius: 999px;
+    border: 0; cursor: pointer; transition: transform .18s, box-shadow .2s, background .2s;
+    font-family: inherit;
+  }
+  .btn-red { background: linear-gradient(135deg, var(--gold), #e8b84a); color: var(--navy-deep); box-shadow: 0 8px 24px -8px rgba(212,160,64,.65); }
+  .btn-red:hover { background: linear-gradient(135deg, #e8b84a, #f0c660); transform: translateY(-2px); box-shadow: 0 12px 28px -8px rgba(212,160,64,.75); }
+  .btn-ghost { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  .btn-ghost:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
+  .btn-light { background: #fff; color: var(--navy); }
+  .btn-light:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+  .hamburger { display: none; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
+  .hamburger span { width: 24px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: .3s; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(6,21,54,.86), rgba(10,31,68,.92)),
+      url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=1600&q=80") center/cover;
+    color: #fff;
+    padding: 96px 0 110px;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 0; height: 8px;
+    background: repeating-linear-gradient(90deg, var(--red) 0 60px, #fff 60px 120px);
+    opacity: .9;
+  }
+  .hero .stars { position: absolute; inset: 0; opacity: .06; background-image: radial-gradient(#fff 1.2px, transparent 1.3px); background-size: 28px 28px; }
+  .hero-inner { position: relative; max-width: 780px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 22px;
+  }
+  .eyebrow::before { content: "★"; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 900; }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero p.lede { font-size: clamp(1.05rem, 2vw, 1.35rem); color: #d7deef; margin: 24px 0 36px; max-width: 620px; }
+  .hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero .scroll-hint { margin-top: 54px; font-size: 0.8rem; letter-spacing: .1em; color: #aeb9d6; }
+
+  /* ---------- Stats strip ---------- */
+  .stats {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    margin-top: -1px;
+  }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 38px 24px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat .num { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: var(--navy); letter-spacing: -0.03em; }
+  .stat .num .unit { color: var(--green); }
+  .stat .lbl { font-size: 0.84rem; color: var(--ink-soft); margin-top: 6px; max-width: 220px; margin-inline: auto; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 92px 0; }
+  .section-head { max-width: 680px; margin-bottom: 54px; }
+  .kicker { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+  .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--navy); }
+  .section-head p { margin-top: 18px; font-size: 1.08rem; color: var(--ink-soft); }
+
+  .mission { background: var(--green-soft); }
+  .mission-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .mission-grid .photo {
+    border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+    aspect-ratio: 4/3;
+  }
+  .mission-grid .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .mission blockquote {
+    font-family: "Source Serif 4", serif; font-size: 1.5rem; font-weight: 500;
+    line-height: 1.35; color: var(--navy); border-left: 4px solid var(--green);
+    padding-left: 22px; margin: 28px 0;
+  }
+  .mission cite { display: block; font-style: normal; font-family: "Libre Franklin"; font-size: .9rem; font-weight: 700; color: var(--ink-soft); margin-top: 14px; }
+
+  /* ---------- Pillars ---------- */
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 32px 28px; transition: transform .25s, box-shadow .25s, border-color .25s;
+    position: relative; overflow: hidden;
+  }
+  .card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--green), var(--gold)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+  .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
+  .card:hover::before { transform: scaleX(1); }
+  .card .ico { width: 52px; height: 52px; border-radius: 14px; background: var(--green-soft); display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 18px; }
+  .card h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 10px; }
+  .card p { font-size: 0.96rem; color: var(--ink-soft); }
+
+  /* ---------- Priorities / accordion ---------- */
+  .priorities { background: var(--navy); color: #fff; }
+  .priorities .section-head h2 { color: #fff; }
+  .priorities .kicker { color: var(--gold); }
+  .priorities .section-head p { color: #c2cce4; }
+  .acc { max-width: 860px; margin: 0 auto; }
+  .acc-item { border-bottom: 1px solid rgba(255,255,255,.14); }
+  .acc-btn {
+    width: 100%; background: none; border: 0; cursor: pointer; color: #fff;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 26px 4px; font-family: inherit; text-align: left; font-size: 1.15rem; font-weight: 700;
+  }
+  .acc-btn .n { color: var(--gold); font-family: "Source Serif 4", serif; font-size: 1rem; margin-right: 14px; }
+  .acc-btn .plus { font-size: 1.6rem; font-weight: 400; transition: transform .3s; color: var(--gold); flex: 0 0 auto; }
+  .acc-item.open .plus { transform: rotate(45deg); }
+  .acc-panel { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+  .acc-panel p { padding: 0 4px 28px; color: #c2cce4; max-width: 760px; }
+
+  /* ---------- Food guide ---------- */
+  .food-categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .food-category { background: #fff; border-radius: var(--radius); padding: 28px; border: 1px solid var(--line); }
+  .food-category h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 18px; }
+  .food-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .food-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: 0.95rem; color: var(--ink); }
+  .food-list li:last-child { border-bottom: none; }
+  .nutrient { font-size: 0.85rem; color: var(--ink-soft); font-weight: 500; white-space: nowrap; }
+
+  /* ---------- Get involved ---------- */
+  .involve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .involve-card { background: var(--paper); border-radius: var(--radius); border: 1px solid var(--line); padding: 34px 28px; text-align: center; }
+  .involve-card .ico { font-size: 2rem; margin-bottom: 14px; }
+  .involve-card h3 { color: var(--navy); font-size: 1.15rem; margin-bottom: 10px; }
+  .involve-card p { color: var(--ink-soft); font-size: 0.94rem; margin-bottom: 20px; }
+
+  /* ---------- Pledge / form ---------- */
+  .pledge { background: linear-gradient(135deg, var(--navy), var(--navy-deep)); color: #fff; }
+  .pledge-box {
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.14);
+    border-radius: 24px; padding: 48px; max-width: 720px; margin: 0 auto; text-align: center;
+    backdrop-filter: blur(6px);
+  }
+  .pledge-box h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; }
+  .pledge-box p { color: #c9d2e8; margin: 16px 0 30px; }
+  .pledge-form { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .pledge-form input {
+    flex: 1 1 260px; min-width: 0; padding: 15px 20px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08); color: #fff; font-family: inherit; font-size: 1rem;
+  }
+  .pledge-form input::placeholder { color: #9fabcb; }
+  .pledge-form input:focus { outline: 2px solid var(--gold); border-color: transparent; }
+  .pledge-note { font-size: 0.78rem; color: #93a0c2; margin-top: 18px; }
+  .pledge-success { display: none; font-size: 1.15rem; font-weight: 700; color: var(--gold); padding: 14px 0; }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--navy-deep); color: #aeb9d6; padding: 64px 0 32px; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+  footer h4 { color: #fff; font-size: 0.82rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 18px; }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+  footer ul a { font-size: 0.92rem; color: #aeb9d6; transition: color .2s; }
+  footer ul a:hover { color: #fff; }
+  footer .brand .txt { color: #fff; }
+  footer .foot-about p { font-size: 0.92rem; max-width: 320px; margin-top: 18px; }
+  .foot-bottom { border-top: 1px solid rgba(255,255,255,.12); padding-top: 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; }
+  .disclaimer { background: #03102b; color: #7e8cb0; font-size: 0.76rem; text-align: center; padding: 16px; line-height: 1.6; }
+  .disclaimer .wrap { max-width: 880px; }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    nav.links { display: none; }
+    nav.links.show {
+      display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+      position: absolute; top: 70px; left: 0; right: 0; background: var(--cream-soft);
+      border-bottom: 1px solid var(--line); padding: 10px 24px 20px;
+    }
+    nav.links.show a { padding: 14px 0; width: 100%; border-bottom: 1px solid var(--line); }
+    nav.links.show .btn { margin-top: 14px; }
+    .hamburger { display: flex; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(2) { border-right: 0; }
+    .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
+    .mission-grid { grid-template-columns: 1fr; gap: 34px; }
+    .mission-grid .photo { order: -1; }
+    .pillars-grid, .involve-grid, .food-categories { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 540px) {
+    section { padding: 64px 0; }
+    .pledge-box { padding: 32px 22px; }
+    .foot-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">A grassroots health movement &nbsp;·&nbsp; <strong>Make America Healthy Again</strong></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand" aria-label="Make America Healthy Again home">
+        <span class="mark" aria-hidden="true">★</span>
+        <span class="txt">MAHA<span>Make America Healthy Again</span></span>
+      </a>
+      <nav class="links" id="navlinks">
+        <a href="#mission">Mission</a>
+        <a href="#pillars">Pillars</a>
+        <a href="#priorities">Priorities</a>
+        <a href="#involve">Get Involved</a>
+        <a href="#pledge" class="btn btn-red">Take the Pledge</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero" style="padding-top:96px">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <span class="eyebrow">A Movement For Every American</span>
+        <h1><span style="color:var(--gold)">Make</span> America <em>Healthy</em> Again!</h1>
+        <p class="lede">Confronting the chronic disease epidemic at its roots — through cleaner food, a cleaner environment, honest science, and a public health system that answers to the American people.</p>
+        <div class="cta-row">
+          <a href="#pledge" class="btn btn-red">Take the Pledge →</a>
+          <a href="#mission" class="btn btn-light">Learn the Mission</a>
+        </div>
+        <p class="scroll-hint">↓ Scroll to see why this matters</p>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" style="padding:0">
+      <div class="wrap">
+        <div class="stats-grid">
+          <div class="stat reveal">
+            <div class="num">6<span class="unit">in 10</span></div>
+            <div class="lbl">U.S. adults live with at least one chronic disease</div>
+          </div>
+          <div class="stat reveal">
+            <div class="num">40<span class="unit">%</span></div>
+            <div class="lbl">of school-age children have a chronic health condition</div>
+          </div>
+          <div class="stat reveal">
+            <div class="num">$4.5<span class="unit">T</span></div>
+            <div class="lbl">spent on U.S. health care each year — among the highest on Earth</div>
+          </div>
+          <div class="stat reveal">
+            <div class="num">~60<span class="unit">%</span></div>
+            <div class="lbl">of the average American diet is ultra-processed food</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="mission" id="mission">
+      <div class="wrap mission-grid">
+        <div class="reveal">
+          <div class="kicker">Our Mission</div>
+          <h2 class="section-head" style="margin-bottom:0"><span style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--navy)">A healthier nation begins with the truth.</span></h2>
+          <p style="margin-top:18px;font-size:1.08rem;color:var(--ink-soft)">For the first time in history, American children may live shorter, sicker lives than their parents. We spend more on health care than any nation — yet we are sicker, heavier, and more medicated than ever before.</p>
+          <blockquote class="serif">
+            “We will end the chronic disease epidemic by getting to the root causes — the food we eat, the chemicals around us, and the corruption that lets it continue.”
+            <cite>— The Make America Healthy Again movement</cite>
+          </blockquote>
+          <p style="font-size:1.08rem;color:var(--ink-soft)">MAHA is a non-partisan call to restore health as a national priority: real food, clean water and air, transparent science, and freedom from conflicts of interest in the agencies meant to protect us.</p>
+        </div>
+        <div class="photo reveal">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=80" alt="A vibrant farmers market display of fresh whole vegetables and fruit" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PILLARS -->
+    <section id="pillars">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="kicker">The Four Pillars</div>
+          <h2>What the movement stands for</h2>
+          <p>A simple framework for a healthier country — focused on prevention, transparency, and the root causes of disease rather than just treating symptoms.</p>
+        </div>
+        <div class="pillars-grid">
+          <div class="card reveal">
+            <div class="ico" aria-hidden="true">🥦</div>
+            <h3>Real Food First</h3>
+            <p>Rebuild the food supply around whole, nutritious food. Remove harmful additives and dyes, reform subsidies that favor ultra-processed products, and make honest nutrition the foundation of public health.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico" aria-hidden="true">💧</div>
+            <h3>Clean Environment</h3>
+            <p>Protect the air we breathe and the water we drink. Reduce exposure to toxic chemicals, microplastics, and pollutants linked to rising rates of chronic and developmental illness.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico" aria-hidden="true">🔬</div>
+            <h3>Honest Science</h3>
+            <p>Demand gold-standard, transparent research free from industry capture. End conflicts of interest and publish the data so families and doctors can make truly informed decisions.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico" aria-hidden="true">🛡️</div>
+            <h3>Accountable Agencies</h3>
+            <p>Restore trust in the institutions that guard public health. Break the revolving door between regulators and the industries they oversee, and put the well-being of citizens first.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico" aria-hidden="true">🏃</div>
+            <h3>Prevention Over Pills</h3>
+            <p>Shift the system from managing disease to preventing it — investing in nutrition, movement, sleep, and metabolic health instead of a lifetime of prescriptions.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico" aria-hidden="true">👨‍👩‍👧</div>
+            <h3>Healthy Children</h3>
+            <p>Reverse the childhood chronic disease epidemic — obesity, diabetes, allergies, and more — so the next generation can grow up healthier than the last.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIORITIES -->
+    <section class="priorities" id="priorities">
+      <div class="wrap">
+        <div class="section-head reveal" style="margin-inline:auto;text-align:center">
+          <div class="kicker">Policy Priorities</div>
+          <h2>From principles to action</h2>
+          <p style="margin-inline:auto">Concrete commitments the movement champions to turn a healthier vision into reality.</p>
+        </div>
+        <div class="acc">
+          <div class="acc-item reveal">
+            <button class="acc-btn" aria-expanded="false">
+              <span><span class="n">01</span>Investigate the childhood chronic disease epidemic</span>
+              <span class="plus" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-panel"><p>Commission rigorous, independent research into why rates of obesity, diabetes, autoimmune conditions, allergies, and neurodevelopmental disorders have climbed so sharply in American children — and act on the findings.</p></div>
+          </div>
+          <div class="acc-item reveal">
+            <button class="acc-btn" aria-expanded="false">
+              <span><span class="n">02</span>Get harmful chemicals out of our food</span>
+              <span class="plus" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-panel"><p>Re-examine food additives, synthetic dyes, and preservatives — many already restricted abroad — and close loopholes that let ingredients reach store shelves without independent safety review.</p></div>
+          </div>
+          <div class="acc-item reveal">
+            <button class="acc-btn" aria-expanded="false">
+              <span><span class="n">03</span>Reform nutrition guidance & food assistance</span>
+              <span class="plus" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-panel"><p>Update federal dietary guidance to reflect the best available science and steer public food programs toward whole, nutrient-dense foods rather than ultra-processed products.</p></div>
+          </div>
+          <div class="acc-item reveal">
+            <button class="acc-btn" aria-expanded="false">
+              <span><span class="n">04</span>End conflicts of interest in health agencies</span>
+              <span class="plus" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-panel"><p>Increase transparency and limit the financial entanglements between regulators, researchers, and the industries they are charged with overseeing — so public health decisions serve the public.</p></div>
+          </div>
+          <div class="acc-item reveal">
+            <button class="acc-btn" aria-expanded="false">
+              <span><span class="n">05</span>Expand access to clean water & a safe environment</span>
+              <span class="plus" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-panel"><p>Prioritize the cleanup of contaminated water systems and reduce community exposure to pollutants and toxic chemicals linked to chronic and developmental health problems.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL FOOD GUIDE -->
+    <section style="background: var(--cream-soft);">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="kicker">Real Food Guide</div>
+          <h2>Whole foods that fuel health</h2>
+          <p>The foundation of a healthier America is choosing real, nutrient-dense foods. Here are some of the best high-fiber, low-calorie options you can start eating today.</p>
+        </div>
+        <div class="food-categories">
+          <div class="food-category reveal">
+            <h3>🫐 Berries & Fruits</h3>
+            <ul class="food-list">
+              <li><strong>Raspberries</strong> <span class="nutrient">8g fiber, 64 cal</span></li>
+              <li><strong>Blackberries</strong> <span class="nutrient">8g fiber, 62 cal</span></li>
+              <li><strong>Strawberries</strong> <span class="nutrient">3g fiber, 49 cal</span></li>
+              <li><strong>Blueberries</strong> <span class="nutrient">4g fiber, 85 cal</span></li>
+              <li><strong>Apple (medium)</strong> <span class="nutrient">4g fiber, 95 cal</span></li>
+              <li><strong>Pear (medium)</strong> <span class="nutrient">6g fiber, 101 cal</span></li>
+            </ul>
+          </div>
+          <div class="food-category reveal">
+            <h3>🥦 Vegetables</h3>
+            <ul class="food-list">
+              <li><strong>Broccoli</strong> <span class="nutrient">2.4g fiber, 31 cal</span></li>
+              <li><strong>Cauliflower</strong> <span class="nutrient">2.3g fiber, 25 cal</span></li>
+              <li><strong>Spinach</strong> <span class="nutrient">0.7g fiber, 7 cal</span></li>
+              <li><strong>Bell peppers</strong> <span class="nutrient">1.9g fiber, 30 cal</span></li>
+              <li><strong>Carrots</strong> <span class="nutrient">3.5g fiber, 52 cal</span></li>
+              <li><strong>Brussels sprouts</strong> <span class="nutrient">3.3g fiber, 38 cal</span></li>
+            </ul>
+          </div>
+          <div class="food-category reveal">
+            <h3>🌱 Legumes & Proteins</h3>
+            <ul class="food-list">
+              <li><strong>Lentils (cooked)</strong> <span class="nutrient">15.6g fiber, 230 cal</span></li>
+              <li><strong>Black beans (cooked)</strong> <span class="nutrient">15g fiber, 227 cal</span></li>
+              <li><strong>Split peas (cooked)</strong> <span class="nutrient">16.3g fiber, 231 cal</span></li>
+              <li><strong>Chickpeas (cooked)</strong> <span class="nutrient">12.5g fiber, 269 cal</span></li>
+              <li><strong>Green beans (cooked)</strong> <span class="nutrient">4g fiber, 44 cal</span></li>
+            </ul>
+          </div>
+          <div class="food-category reveal">
+            <h3>🌾 Whole Grains & Seeds</h3>
+            <ul class="food-list">
+              <li><strong>Chia seeds (1 oz)</strong> <span class="nutrient">10g fiber, 138 cal</span></li>
+              <li><strong>Wheat bran (1/4 cup)</strong> <span class="nutrient">6g fiber, 63 cal</span></li>
+              <li><strong>Oat bran (1/4 cup)</strong> <span class="nutrient">7g fiber, 150 cal</span></li>
+              <li><strong>Barley (cooked)</strong> <span class="nutrient">6g fiber, 193 cal</span></li>
+              <li><strong>Whole wheat bread</strong> <span class="nutrient">2-3g fiber, 100-120 cal</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="food-tips reveal" style="background: #fff; border-radius: var(--radius); padding: 36px 28px; margin-top: 48px; border: 1px solid var(--line);">
+          <h3 style="color: var(--navy); margin-bottom: 18px;">Quick Tips to Maximize Benefits</h3>
+          <ul style="list-style: none; color: var(--ink-soft); line-height: 1.8;">
+            <li style="margin-bottom: 12px;">✓ <strong>Eat skins</strong> — keep apple and pear skins for extra fiber</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Eat raw when possible</strong> — cooking can reduce fiber content</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Mix & match</strong> — combine berries with seeds for maximum nutrition</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Increase gradually</strong> — add fiber slowly to avoid digestive discomfort</li>
+            <li>✓ <strong>Drink water</strong> — fiber works best with proper hydration (2-3L daily)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GET INVOLVED -->
+    <section id="involve">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="kicker">Get Involved</div>
+          <h2>Be part of the movement</h2>
+          <p>Real change starts in kitchens, communities, and town halls. Here are three ways to help build a healthier America.</p>
+        </div>
+        <div class="involve-grid">
+          <div class="involve-card reveal">
+            <div class="ico" aria-hidden="true">✍️</div>
+            <h3>Take the Pledge</h3>
+            <p>Add your name and stand with millions of Americans committed to ending the chronic disease epidemic.</p>
+            <a href="#pledge" class="btn btn-red">Sign On</a>
+          </div>
+          <div class="involve-card reveal">
+            <div class="ico" aria-hidden="true">📣</div>
+            <h3>Spread the Word</h3>
+            <p>Share the message with your family and community. Healthier habits and honest information are contagious.</p>
+            <a href="#pledge" class="btn btn-ghost">Share</a>
+          </div>
+          <div class="involve-card reveal">
+            <div class="ico" aria-hidden="true">🌱</div>
+            <h3>Start at Home</h3>
+            <p>Choose whole foods, read your labels, move your body, and demand transparency. Change begins on your plate.</p>
+            <a href="#pillars" class="btn btn-ghost">Learn How</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLEDGE -->
+    <section class="pledge" id="pledge">
+      <div class="wrap">
+        <div class="pledge-box reveal">
+          <div class="kicker" style="color:var(--gold)">Join Us</div>
+          <h2>Take the MAHA Pledge</h2>
+          <p>Sign on to support cleaner food, a cleaner environment, and honest, accountable science. We'll keep you updated — no spam, ever.</p>
+          <form class="pledge-form" id="pledgeForm" novalidate>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" aria-label="Your name" required />
+            <input type="email" id="email" name="email" placeholder="Your email" autocomplete="email" aria-label="Your email" required />
+            <button type="submit" class="btn btn-red">Add My Name</button>
+          </form>
+          <p class="pledge-success" id="pledgeSuccess" role="status">★ Thank you for joining the movement! Your voice matters.</p>
+          <p class="pledge-note">This is a demonstration site. No information is stored or transmitted.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-about">
+          <a href="#top" class="brand">
+            <span class="mark" aria-hidden="true">★</span>
+            <span class="txt">MAHA<span style="color:var(--gold)">Make America Healthy Again</span></span>
+          </a>
+          <p>A grassroots movement to end the chronic disease epidemic through real food, a clean environment, and honest, accountable science.</p>
+        </div>
+        <div>
+          <h4>Movement</h4>
+          <ul>
+            <li><a href="#mission">Our Mission</a></li>
+            <li><a href="#pillars">The Pillars</a></li>
+            <li><a href="#priorities">Priorities</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Act</h4>
+          <ul>
+            <li><a href="#pledge">Take the Pledge</a></li>
+            <li><a href="#involve">Get Involved</a></li>
+            <li><a href="#involve">Spread the Word</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Learn More</h4>
+          <ul>
+            <li><a href="https://www.cdc.gov/chronicdisease/" target="_blank" rel="noopener">CDC · Chronic Disease</a></li>
+            <li><a href="https://www.hhs.gov/" target="_blank" rel="noopener">HHS.gov</a></li>
+            <li><a href="https://www.dietaryguidelines.gov/" target="_blank" rel="noopener">Dietary Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Make America Healthy Again — a citizen advocacy project.</span>
+        <span>Designed for a healthier nation. 🇺🇸</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="disclaimer">
+    <div class="wrap">
+      <strong>Disclaimer:</strong> This is an independent, informational website created to present the publicly stated themes of the "Make America Healthy Again" movement associated with Robert F. Kennedy Jr. It is not affiliated with, endorsed by, or an official communication of any government agency, campaign, or individual. Statistics are illustrative and drawn from publicly reported figures on chronic disease in the United States; verify current data with official sources. Nothing here is medical advice — consult a qualified professional for health decisions.
+    </div>
+  </div>
+
+<script>
+  // Mobile nav toggle
+  const hamburger = document.getElementById('hamburger');
+  const navlinks = document.getElementById('navlinks');
+  hamburger.addEventListener('click', () => {
+    const open = navlinks.classList.toggle('show');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  navlinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      navlinks.classList.remove('show');
+      hamburger.setAttribute('aria-expanded', 'false');
+    })
+  );
+
+  // Accordion
+  document.querySelectorAll('.acc-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const panel = btn.nextElementSibling;
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.acc-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.acc-panel').style.maxHeight = null;
+        i.querySelector('.acc-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Pledge form
+  const form = document.getElementById('pledgeForm');
+  const success = document.getElementById('pledgeSuccess');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const valid = name.value.trim() && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim());
+    if (!valid) {
+      (name.value.trim() ? email : name).focus();
+      return;
+    }
+    form.style.display = 'none';
+    success.style.display = 'block';
+  });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
